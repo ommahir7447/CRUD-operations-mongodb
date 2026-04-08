@@ -3,8 +3,9 @@ services:
     name: pract7-ecommerce-api
     runtime: node
     region: oregon
-    buildCommand: cd server && npm install
-    startCommand: cd server && node server.js
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node server.js
     envVars:
       - key: MONGO_URI
         sync: false
@@ -12,8 +13,6 @@ services:
         sync: false
       - key: NODE_ENV
         value: production
-      - key: PORT
-        value: 5000
       - key: CLOUDINARY_CLOUD_NAME
         sync: false
       - key: CLOUDINARY_API_KEY
